@@ -1,0 +1,10 @@
+{
+  "http_status": 200,
+  "elapsed_seconds": 0.675,
+  "rate_limit_headers": {
+    "x-ratelimit-limit-requests": "2000",
+    "x-ratelimit-remaining-requests": "1999",
+    "x-ratelimit-reset-requests": "43.2s"
+  },
+  "usage": null
+}

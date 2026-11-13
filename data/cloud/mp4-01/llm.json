@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-bfba43fc-fcc2-481a-9a42-6fc1f97212d3",
+  "object": "chat.completion",
+  "created": 1794092828,
+  "model": "openai/gpt-oss-20b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "- A vector is fundamentally an ordered list of numbers that can represent magnitude and direction in space.  \n- In physics, a vector is visualized as an arrow whose length (magnitude) and direction define it; its position can change without altering the vector.  \n- In computer science, the focus is on the vector as a data structure—an ordered collection of components, often used for calculations and algorithmic manipulation."
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "queue_time": 0.293542237,
+    "prompt_tokens": 255,
+    "prompt_time": 0.012429076,
+    "completion_tokens": 100,
+    "completion_time": 0.111087249,
+    "total_tokens": 355,
+    "total_time": 0.123516325,
+    "completion_tokens_details": {
+      "reasoning_tokens": 7
+    }
+  },
+  "usage_breakdown": null,
+  "system_fingerprint": "fp_75c733514d",
+  "x_groq": {
+    "id": "req_01m6w481wpeh68fmadxpkhdg49",
+    "seed": 470728982
+  },
+  "service_tier": "on_demand"
+}

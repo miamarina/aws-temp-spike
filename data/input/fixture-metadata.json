@@ -1,0 +1,16 @@
+{
+  "file": "E:\\tu\\Serverless\\.spike-tmp\\fixtures\\vectors-study-55s.mp4",
+  "source_url": "https://www.youtube.com/watch?v=fNk_zzaMoSs",
+  "title": "Vectors | Chapter 1, Essence of linear algebra",
+  "creator": "3Blue1Brown",
+  "source_duration_seconds": 591,
+  "excerpt_interval_seconds": [
+    0,
+    55
+  ],
+  "mp4_duration_seconds": 55.0,
+  "size_bytes": 1256129,
+  "sha256": "921901ff926246d2fde1271dc70eb0344e09950cc614780818305eae9efb6b9d",
+  "permission_basis": "Creator clip policy: less than 60 seconds, attribution and added context; user approved 55-second study excerpt.",
+  "permission_url": "https://www.3blue1brown.com/about/"
+}

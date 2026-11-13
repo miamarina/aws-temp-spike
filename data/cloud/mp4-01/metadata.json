@@ -1,0 +1,49 @@
+{
+  "mode": "mp4",
+  "run_id": "mp4-01",
+  "source": "Vectors — Chapter 1, Essence of linear algebra, 3Blue1Brown; 00:00–00:55. https://www.youtube.com/watch?v=fNk_zzaMoSs",
+  "request_id": "76ac9141-c4c1-46e5-a504-7cf052afd11d",
+  "python": "3.13.17 (main, Oct 27 2026, 19:58:10) [GCC 11.5.0 20240719 (Red Hat 11.5.0-5)]",
+  "architecture": "x86_64",
+  "download_seconds": 0.116,
+  "asr": {
+    "http_status": 200,
+    "elapsed_seconds": 0.442,
+    "usage": null,
+    "rate_limit_headers": {
+      "x-ratelimit-limit-requests": "2000",
+      "x-ratelimit-remaining-requests": "1999",
+      "x-ratelimit-reset-requests": "43.2s"
+    },
+    "segments": 16,
+    "reported_duration": 54.999998464,
+    "input_bytes": 1256129
+  },
+  "llm": {
+    "http_status": 200,
+    "elapsed_seconds": 0.474,
+    "usage": {
+      "queue_time": 0.293542237,
+      "prompt_tokens": 255,
+      "prompt_time": 0.012429076,
+      "completion_tokens": 100,
+      "completion_time": 0.111087249,
+      "total_tokens": 355,
+      "total_time": 0.123516325,
+      "completion_tokens_details": {
+        "reasoning_tokens": 7
+      }
+    },
+    "rate_limit_headers": {
+      "x-ratelimit-limit-requests": "1000",
+      "x-ratelimit-limit-tokens": "8000",
+      "x-ratelimit-remaining-requests": "999",
+      "x-ratelimit-remaining-tokens": "7257",
+      "x-ratelimit-reset-requests": "1m26.4s",
+      "x-ratelimit-reset-tokens": "5.572s"
+    },
+    "finish_reason": "stop"
+  },
+  "status": "pass",
+  "total_seconds": 1.271
+}

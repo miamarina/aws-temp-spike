@@ -1,0 +1,36 @@
+{
+  "id": "chatcmpl-68943575-91e3-4300-8332-2dd8af915ddf",
+  "object": "chat.completion",
+  "created": 1794091854,
+  "model": "openai/gpt-oss-20b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "- Vectors are the foundational building block of linear algebra.  \n- The physics view: vectors are arrows defined by length and direction; their position can change without altering the vector.  \n- The computer science view: vectors are represented as ordered lists of components."
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "queue_time": 0.122668267,
+    "prompt_tokens": 255,
+    "prompt_time": 0.016576709,
+    "completion_tokens": 71,
+    "completion_time": 0.10425211,
+    "total_tokens": 326,
+    "total_time": 0.120828819,
+    "completion_tokens_details": {
+      "reasoning_tokens": 10
+    }
+  },
+  "usage_breakdown": null,
+  "system_fingerprint": "fp_334cc21c60",
+  "x_groq": {
+    "id": "req_01m6w3aar1end8en2rxcpqaf3v",
+    "seed": 1063724585
+  },
+  "service_tier": "on_demand"
+}

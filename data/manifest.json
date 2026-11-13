@@ -1,0 +1,295 @@
+{
+  "schema_version": 1,
+  "archived_at_utc": "2026-11-07T23:39:41.084918+00:00",
+  "archive_date_europe_vienna": "2026-11-08",
+  "purpose": "User-requested permanent input and generated-data archive beside the spike report; retain during temporary/AWS cleanup.",
+  "source_bucket": "studynotes-m1-588625038963-eun1-20261108",
+  "source_region": "eu-north-1",
+  "artifact_count": 23,
+  "artifact_bytes": 3058202,
+  "campaign_totals": {
+    "audio_seconds": 165,
+    "llm_calls": 2,
+    "llm_tokens": 681,
+    "model_list_gets": 1
+  },
+  "excluded_s3_keys": [
+    "code/function.zip",
+    "code/ffmpeg-layer.zip"
+  ],
+  "verification": {
+    "artifact_sha256_and_sizes": "passed",
+    "single_PUT_object_md5_etags": "matched for all 14 S3 objects",
+    "input_matches_tested_sha256": true,
+    "wav_format": "16000 Hz, mono, 16-bit PCM, 880000 frames, 55 seconds",
+    "cloud_transcripts_identical": true,
+    "cloud_bullets_identical": true,
+    "json_parsing": "passed",
+    "credential_pattern_scan": "passed"
+  },
+  "artifacts": [
+    {
+      "path": "cloud/mp4-01/asr.json",
+      "bytes": 8521,
+      "sha256": "b08c26db8190109a3f487428ae5377f9795d1708c6c0e4925f7ae935ae2f6ba0",
+      "source": {
+        "kind": "s3",
+        "bucket": "studynotes-m1-588625038963-eun1-20261108",
+        "region": "eu-north-1",
+        "key": "output/mp4-01/asr.json",
+        "etag": "\"4a0673e19f2efd54851f73b0b942ead5\"",
+        "last_modified_utc": "2026-11-07T23:07:09+00:00"
+      }
+    },
+    {
+      "path": "cloud/mp4-01/bullets.md",
+      "bytes": 562,
+      "sha256": "67d0edc95738a30cf6218535dcbbcfd9cfe8c5289ee102b338fd902db843df48",
+      "source": {
+        "kind": "s3",
+        "bucket": "studynotes-m1-588625038963-eun1-20261108",
+        "region": "eu-north-1",
+        "key": "output/mp4-01/bullets.md",
+        "etag": "\"09c6f181b3f67b61084340a2e9e3f27f\"",
+        "last_modified_utc": "2026-11-07T23:07:10+00:00"
+      }
+    },
+    {
+      "path": "cloud/mp4-01/llm.json",
+      "bytes": 1245,
+      "sha256": "e9a4b57938683b6c21769c0b237dbaa35161f89659dfc07a47b8207788931a9c",
+      "source": {
+        "kind": "s3",
+        "bucket": "studynotes-m1-588625038963-eun1-20261108",
+        "region": "eu-north-1",
+        "key": "output/mp4-01/llm.json",
+        "etag": "\"fd561d0472755de56f868c9b0838d8a1\"",
+        "last_modified_utc": "2026-11-07T23:07:09+00:00"
+      }
+    },
+    {
+      "path": "cloud/mp4-01/metadata.json",
+      "bytes": 1501,
+      "sha256": "d951dacaf7c5897333c304bdadf22a715536a1389049d3ff593a87eb06b2d131",
+      "source": {
+        "kind": "s3",
+        "bucket": "studynotes-m1-588625038963-eun1-20261108",
+        "region": "eu-north-1",
+        "key": "output/mp4-01/metadata.json",
+        "etag": "\"92426eab0e2c4082bc350cf37bd11364\"",
+        "last_modified_utc": "2026-11-07T23:07:10+00:00"
+      }
+    },
+    {
+      "path": "cloud/mp4-01/transcript.md",
+      "bytes": 1243,
+      "sha256": "b7cb6eb3a9c3a319a71c7f173b34362d7fe2eb2632c09469295d3432e1093267",
+      "source": {
+        "kind": "s3",
+        "bucket": "studynotes-m1-588625038963-eun1-20261108",
+        "region": "eu-north-1",
+        "key": "output/mp4-01/transcript.md",
+        "etag": "\"2c3538ac3038ed176de4f972c17c4149\"",
+        "last_modified_utc": "2026-11-07T23:07:09+00:00"
+      }
+    },
+    {
+      "path": "cloud/wav-01/asr.json",
+      "bytes": 8521,
+      "sha256": "c0f7f720a458d745adeb9d6d56390ce3251c6bd4e792b03afba14a8b6f41a64f",
+      "source": {
+        "kind": "s3",
+        "bucket": "studynotes-m1-588625038963-eun1-20261108",
+        "region": "eu-north-1",
+        "key": "output/wav-01/asr.json",
+        "etag": "\"e8261a0b1262426e0b5eb1db15b0e9c3\"",
+        "last_modified_utc": "2026-11-07T23:11:29+00:00"
+      }
+    },
+    {
+      "path": "cloud/wav-01/bullets.md",
+      "bytes": 562,
+      "sha256": "67d0edc95738a30cf6218535dcbbcfd9cfe8c5289ee102b338fd902db843df48",
+      "source": {
+        "kind": "s3",
+        "bucket": "studynotes-m1-588625038963-eun1-20261108",
+        "region": "eu-north-1",
+        "key": "output/wav-01/bullets.md",
+        "etag": "\"09c6f181b3f67b61084340a2e9e3f27f\"",
+        "last_modified_utc": "2026-11-07T23:11:29+00:00"
+      }
+    },
+    {
+      "path": "cloud/wav-01/fixture.wav",
+      "bytes": 1760078,
+      "sha256": "8d43ebcac195a0a19a5b4d80a2f5a7303f4118174e7fef29be54b2fdf24a9ca9",
+      "source": {
+        "kind": "s3",
+        "bucket": "studynotes-m1-588625038963-eun1-20261108",
+        "region": "eu-north-1",
+        "key": "output/wav-01/fixture.wav",
+        "etag": "\"523979324e072845792e781e04dbda58\"",
+        "last_modified_utc": "2026-11-07T23:11:28+00:00"
+      }
+    },
+    {
+      "path": "cloud/wav-01/metadata.json",
+      "bytes": 4080,
+      "sha256": "62bcb78a72195aa206b9cc931086cd8723e1f6e4026cc4878cb0d03a96ef644a",
+      "source": {
+        "kind": "s3",
+        "bucket": "studynotes-m1-588625038963-eun1-20261108",
+        "region": "eu-north-1",
+        "key": "output/wav-01/metadata.json",
+        "etag": "\"2c3d782ab289cb503b61676280d8e5c2\"",
+        "last_modified_utc": "2026-11-07T23:11:29+00:00"
+      }
+    },
+    {
+      "path": "cloud/wav-01/transcript.md",
+      "bytes": 1243,
+      "sha256": "b7cb6eb3a9c3a319a71c7f173b34362d7fe2eb2632c09469295d3432e1093267",
+      "source": {
+        "kind": "s3",
+        "bucket": "studynotes-m1-588625038963-eun1-20261108",
+        "region": "eu-north-1",
+        "key": "output/wav-01/transcript.md",
+        "etag": "\"2c3538ac3038ed176de4f972c17c4149\"",
+        "last_modified_utc": "2026-11-07T23:11:29+00:00"
+      }
+    },
+    {
+      "path": "input/fixture-metadata.json",
+      "bytes": 664,
+      "sha256": "b2846ea90a87124627cae7c7351d6774cb286f184d6a8a352d24674d1d12c630",
+      "source": {
+        "kind": "local",
+        "original_path": ".spike-tmp/fixtures/fixture-metadata.json"
+      }
+    },
+    {
+      "path": "input/vectors-study-55s.mp4",
+      "bytes": 1256129,
+      "sha256": "921901ff926246d2fde1271dc70eb0344e09950cc614780818305eae9efb6b9d",
+      "source": {
+        "kind": "s3",
+        "bucket": "studynotes-m1-588625038963-eun1-20261108",
+        "region": "eu-north-1",
+        "key": "input/vectors-study-55s.mp4",
+        "etag": "\"0af2776a82a2ec2bcaa8a0f795260409\"",
+        "last_modified_utc": "2026-11-07T23:04:12+00:00"
+      }
+    },
+    {
+      "path": "local/bullets-20261107T225056846739Z.json",
+      "bytes": 1130,
+      "sha256": "77f501534769bb5948810feb4539c6f21379df1c2eb96b190224f1f5b576c5b7",
+      "source": {
+        "kind": "local",
+        "original_path": ".spike-tmp/groq-local/bullets-20261107T225056846739Z.json"
+      }
+    },
+    {
+      "path": "local/bullets-20261107T225056846739Z.md",
+      "bytes": 284,
+      "sha256": "70b286ce81edcece37c23093a67344d338758ce3cdfd060b1cfe113404bcd0d4",
+      "source": {
+        "kind": "local",
+        "original_path": ".spike-tmp/groq-local/bullets-20261107T225056846739Z.md"
+      }
+    },
+    {
+      "path": "local/bullets-20261107T225056846739Z.metadata.json",
+      "bytes": 660,
+      "sha256": "544210669dcb3b041536d4631d0a3550616ac64893814904bcd754452a74d312",
+      "source": {
+        "kind": "local",
+        "original_path": ".spike-tmp/groq-local/bullets-20261107T225056846739Z.metadata.json"
+      }
+    },
+    {
+      "path": "local/study-notes.md",
+      "bytes": 502,
+      "sha256": "fee3556dde1f1406ad270381438e5bf49b40def72317e5360939346a4de98b59",
+      "source": {
+        "kind": "local",
+        "original_path": ".spike-tmp/groq-local/study-notes.md"
+      }
+    },
+    {
+      "path": "local/transcript-20261107T225004177467Z.json",
+      "bytes": 8929,
+      "sha256": "8a682cf6141424d5757c62d0ca8e99d724ebe13d433c9a00014ab585285572a2",
+      "source": {
+        "kind": "local",
+        "original_path": ".spike-tmp/groq-local/transcript-20261107T225004177467Z.json"
+      }
+    },
+    {
+      "path": "local/transcript-20261107T225004177467Z.md",
+      "bytes": 1143,
+      "sha256": "e8a1f707228f96710111d2ff937ac4c4e1fdd793f2d5eb2022a5da55930fed74",
+      "source": {
+        "kind": "local",
+        "original_path": ".spike-tmp/groq-local/transcript-20261107T225004177467Z.md"
+      }
+    },
+    {
+      "path": "local/transcript-20261107T225004177467Z.metadata.json",
+      "bytes": 239,
+      "sha256": "eccca38ca9e0deca009b0f99c468435b41d460b73ecf6e5d795639b9808f3207",
+      "source": {
+        "kind": "local",
+        "original_path": ".spike-tmp/groq-local/transcript-20261107T225004177467Z.metadata.json"
+      }
+    },
+    {
+      "path": "usage/cloud-attempts/mp4-01-asr.json",
+      "bytes": 36,
+      "sha256": "1e0a9eb2bfcdfde8ee6c75dfdac4eb44ad755fa35c4214f5d59e92405ebaf610",
+      "source": {
+        "kind": "s3",
+        "bucket": "studynotes-m1-588625038963-eun1-20261108",
+        "region": "eu-north-1",
+        "key": "attempts/mp4-01-asr.json",
+        "etag": "\"7fbb1839d634a35b82eda41112937215\"",
+        "last_modified_utc": "2026-11-07T23:07:08+00:00"
+      }
+    },
+    {
+      "path": "usage/cloud-attempts/mp4-01-llm.json",
+      "bytes": 35,
+      "sha256": "d2f40766e4f0ed0fe838eeaad16997a4ebcc925a52e780e4182435ed5a863bb8",
+      "source": {
+        "kind": "s3",
+        "bucket": "studynotes-m1-588625038963-eun1-20261108",
+        "region": "eu-north-1",
+        "key": "attempts/mp4-01-llm.json",
+        "etag": "\"b23b7db7afe2722b3c60302102e8d96a\"",
+        "last_modified_utc": "2026-11-07T23:07:09+00:00"
+      }
+    },
+    {
+      "path": "usage/cloud-attempts/wav-01-asr.json",
+      "bytes": 36,
+      "sha256": "1e0a9eb2bfcdfde8ee6c75dfdac4eb44ad755fa35c4214f5d59e92405ebaf610",
+      "source": {
+        "kind": "s3",
+        "bucket": "studynotes-m1-588625038963-eun1-20261108",
+        "region": "eu-north-1",
+        "key": "attempts/wav-01-asr.json",
+        "etag": "\"7fbb1839d634a35b82eda41112937215\"",
+        "last_modified_utc": "2026-11-07T23:11:28+00:00"
+      }
+    },
+    {
+      "path": "usage/groq-usage.json",
+      "bytes": 859,
+      "sha256": "a647c4a472b9cc47a2560ac36280414f644109bb0c8a0857ca153253c4d52210",
+      "source": {
+        "kind": "local",
+        "original_path": ".spike-tmp/groq-usage.json"
+      }
+    }
+  ]
+}

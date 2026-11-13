@@ -1,0 +1,24 @@
+{
+  "http_status": 200,
+  "elapsed_seconds": 0.343,
+  "rate_limit_headers": {
+    "x-ratelimit-limit-requests": "1000",
+    "x-ratelimit-limit-tokens": "8000",
+    "x-ratelimit-remaining-requests": "999",
+    "x-ratelimit-remaining-tokens": "7576",
+    "x-ratelimit-reset-requests": "1m26.4s",
+    "x-ratelimit-reset-tokens": "3.179s"
+  },
+  "usage": {
+    "queue_time": 0.122668267,
+    "prompt_tokens": 255,
+    "prompt_time": 0.016576709,
+    "completion_tokens": 71,
+    "completion_time": 0.10425211,
+    "total_tokens": 326,
+    "total_time": 0.120828819,
+    "completion_tokens_details": {
+      "reasoning_tokens": 10
+    }
+  }
+}

@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "status": "aws_cleanup_complete",
+  "date_europe_vienna": "2026-11-08",
+  "verified_at_utc": "2026-11-07T23:48:24.576533+00:00",
+  "authorization": "User explicitly requested: now clean up the aws resources",
+  "project_id": "588625038963",
+  "application_region": "eu-north-1",
+  "deleted": {
+    "lambda_function": "studynotes-m1-spike-20261108",
+    "layer_version": "arn:aws:lambda:eu-north-1:588625038963:layer:studynotes-m1-ffmpeg-20261108:1",
+    "s3_bucket": "studynotes-m1-588625038963-eun1-20261108",
+    "s3_object_count": 16,
+    "s3_object_keys": [
+      "code/ffmpeg-layer.zip",
+      "output/mp4-01/transcript.md",
+      "output/mp4-01/bullets.md",
+      "attempts/mp4-01-asr.json",
+      "output/wav-01/transcript.md",
+      "attempts/wav-01-asr.json",
+      "output/wav-01/asr.json",
+      "output/wav-01/bullets.md",
+      "attempts/mp4-01-llm.json",
+      "output/wav-01/metadata.json",
+      "output/mp4-01/asr.json",
+      "code/function.zip",
+      "output/wav-01/fixture.wav",
+      "output/mp4-01/metadata.json",
+      "output/mp4-01/llm.json",
+      "input/vectors-study-55s.mp4"
+    ],
+    "iam_role": "studynotes-m1-lambda-20261108",
+    "iam_inline_policy": "M1SpikeOnly",
+    "cloudwatch_log_group": "/aws/lambda/studynotes-m1-spike-20261108"
+  },
+  "absence_checks": {
+    "lambda": {
+      "confirmed_absent": true,
+      "api_error": "An error occurred (ResourceNotFoundException) when calling the GetFunctionConfiguration operation: Function not found: arn:aws:lambda:eu-north-1:588625038963:function:studynotes-m1-spike-20261108"
+    },
+    "layer_version_1": {
+      "confirmed_absent": true,
+      "api_error": "An error occurred (ResourceNotFoundException) when calling the GetLayerVersion operation: The resource you requested does not exist."
+    },
+    "bucket": {
+      "confirmed_absent": true,
+      "api_error": "An error occurred (404) when calling the HeadBucket operation: Not Found"
+    },
+    "role": {
+      "confirmed_absent": true,
+      "api_error": "An error occurred (NoSuchEntity) when calling the GetRole operation: The role with name studynotes-m1-lambda-20261108 cannot be found."
+    },
+    "logs_selected_region": {
+      "confirmed_absent": true,
+      "logGroups": []
+    },
+    "logs_us_east_1": {
+      "confirmed_absent": true,
+      "logGroups": []
+    },
+    "estimated_gross_usage": {
+      "ResultsByTime": [
+        {
+          "TimePeriod": {
+            "Start": "2026-11-01",
+            "End": "2026-11-08"
+          },
+          "Total": {
+            "UnblendedCost": {
+              "Amount": "0",
+              "Unit": "USD"
+            }
+          },
+          "Groups": [],
+          "Estimated": true
+        }
+      ],
+      "DimensionValueAttributes": []
+    }
+  },
+  "plan_snapshot_before_deletion": {
+    "accountId": "588625038963",
+    "accountPlanType": "FREE",
+    "accountPlanStatus": "ACTIVE",
+    "accountPlanRemainingCredits": {
+      "amount": 120,
+      "unit": "USD"
+    },
+    "accountPlanExpirationDate": "2027-05-07T22:23:44.296000+00:00"
+  },
+  "retained": {
+    "report": "assignment-2/spike-report/README.md",
+    "data_index": "assignment-2/spike-report/data/README.md",
+    "verified_data_artifacts": 23,
+    "verified_data_bytes": 3058202,
+    "groq_script": "assignment-2/groq_spike.py",
+    "local_scratch_files": "Retained; this request covered AWS resource cleanup."
+  },
+  "notes": [
+    "Groq key revocation was confirmed by the owner before cleanup; no inference requests were made during cleanup.",
+    "Not-found API errors are the expected evidence that deleted resources are absent.",
+    "The final Cost Explorer result remains estimated; billing data can lag."
+  ],
+  "deletion_api_calls": [
+    {
+      "service": "s3",
+      "operation": "ListObjectsV2",
+      "status": "success",
+      "n_items": {
+        "Contents": 16
+      }
+    },
+    {
+      "service": "lambda",
+      "operation": "DeleteFunction",
+      "status": "success"
+    },
+    {
+      "service": "lambda",
+      "operation": "DeleteLayerVersion",
+      "status": "success"
+    },
+    {
+      "service": "s3",
+      "operation": "DeleteObjects",
+      "status": "success",
+      "n_items": {
+        "Deleted": 16
+      }
+    },
+    {
+      "service": "s3",
+      "operation": "DeleteBucket",
+      "status": "success"
+    },
+    {
+      "service": "iam",
+      "operation": "DeleteRolePolicy",
+      "status": "success"
+    },
+    {
+      "service": "iam",
+      "operation": "DeleteRole",
+      "status": "success"
+    },
+    {
+      "service": "logs",
+      "operation": "DeleteLogGroup",
+      "status": "success"
+    }
+  ],
+  "verification_api_calls": [
+    {
+      "service": "lambda",
+      "operation": "GetFunctionConfiguration",
+      "status": "error",
+      "error": "ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetFunctionConfiguration operation: Function not found: arn:aws:lambda:eu-north-1:588625038963:function:studynotes-m1-spike-20261108"
+    },
+    {
+      "service": "lambda",
+      "operation": "GetLayerVersion",
+      "status": "error",
+      "error": "ResourceNotFoundException: An error occurred (ResourceNotFoundException) when calling the GetLayerVersion operation: The resource you requested does not exist."
+    },
+    {
+      "service": "s3",
+      "operation": "HeadBucket",
+      "status": "error",
+      "error": "ClientError: An error occurred (404) when calling the HeadBucket operation: Not Found"
+    },
+    {
+      "service": "iam",
+      "operation": "GetRole",
+      "status": "error",
+      "error": "NoSuchEntityException: An error occurred (NoSuchEntity) when calling the GetRole operation: The role with name studynotes-m1-lambda-20261108 cannot be found."
+    },
+    {
+      "service": "logs",
+      "operation": "DescribeLogGroups",
+      "status": "success",
+      "n_items": {
+        "logGroups": 0
+      }
+    },
+    {
+      "service": "logs",
+      "operation": "DescribeLogGroups",
+      "status": "success",
+      "n_items": {
+        "logGroups": 0
+      }
+    },
+    {
+      "service": "ce",
+      "operation": "GetCostAndUsage",
+      "status": "success",
+      "n_items": {
+        "ResultsByTime": 1,
+        "DimensionValueAttributes": 0
+      }
+    }
+  ]
+}
