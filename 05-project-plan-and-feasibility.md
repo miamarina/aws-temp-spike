@@ -1,6 +1,6 @@
 # What the spike means for the project plan
 
-**Assessment date:** 8 November 2026, Europe/Vienna. Based on the [spike report](README.md), its [retained data](data/README.md), the [formal findings](../m1-fail-fast-spike.md), and the [scope/KPI baseline](../scope-and-kpi-baseline.md).
+**Assessment date:** 8 November 2026, Europe/Vienna. Based on the [spike report](README.md), its [retained data](data/README.md), the [formal findings](../../docs/history/m1-fail-fast-spike.md), and the [scope/KPI baseline](../../docs/planning/scope-and-kpi-baseline.md).
 
 **Recommendation:** continue with the serverless lecture-scriptum project, using the tested Groq models and AWS Lambda/S3 as the technical baseline. The spike removed the immediate access, integration and short-input packaging risks. Full-lecture quality, automation, reliability and the original performance KPIs remain unverified. Free-tier quotas already require changes to the peak-load evaluation plan.
 
@@ -45,7 +45,7 @@ flowchart LR
 
 Only the underlying S3/Lambda/Groq calls and short FFmpeg extraction were exercised. **S3 notifications, SQS, Step Functions, DynamoDB job/quota state, managed key retrieval and CloudFront publication remain untested here.** Use on-demand Lambda workers for the bursty prototype. Retain Step Functions Standard as the workflow candidate for visible stages, bounded retries and quota waits, subject to an access/integration check.
 
-The broader [execution plan](../m1-execution-plan.md) proposes **SSM Standard SecureString** for the key. The spike used a temporary Lambda environment variable; it did not validate SSM retrieval. Treat that as an open dependency, and do not copy the older Secrets Manager cost assumptions into the revised estimate.
+The broader [execution plan](../../docs/history/m1-execution-plan.md) proposes **SSM Standard SecureString** for the key. The spike used a temporary Lambda environment variable; it did not validate SSM retrieval. Treat that as an open dependency, and do not copy the older Secrets Manager cost assumptions into the revised estimate.
 
 ### Keep full-lecture support conditional
 
@@ -63,7 +63,7 @@ The saved cloud bullets are a useful regression example because their unsupporte
 
 ## 3. What the findings mean for the KPIs
 
-The [submitted targets](../scope-and-kpi-baseline.md) remain hypotheses unless explicitly revised in Assignment 2.
+The [submitted targets](../../docs/planning/scope-and-kpi-baseline.md) remain hypotheses unless explicitly revised in Assignment 2.
 
 | Target | Current assessment | Required evidence or revision |
 | --- | --- | --- |
@@ -88,7 +88,7 @@ Start with retained evidence and offline checks. Run live checks only in a separ
 
 **Do now without new inference:**
 
-- Use the completed report as the current M1 evidence. The [planning workflow](../project-planning-workflow.md), [Groq proposal](../groq-project-overview.md), [broader execution plan](../m1-execution-plan.md) and [access-results template](../m1-access-results.md) contain stale pending status, model choices or superseded setup requirements. Revise them when drafting the project plan.
+- Use the completed report as the current M1 evidence. The [planning workflow](../../docs/planning/project-planning-workflow.md), [Groq proposal](../../docs/research/groq-project-overview.md), [broader execution plan](../../docs/history/m1-execution-plan.md) and [access-results template](../../docs/history/m1-access-results.md) contain stale pending status, model choices or superseded setup requirements. Revise them when drafting the project plan.
 - Choose the evaluation language and a small permitted dataset with verified transcripts. If German is claimed, include German examples. The retained 55-second clip's permission basis does not establish permission to reuse an entire lecture.
 - Define a grounding rubric, timestamp tolerance and chunk-boundary checks before generating more results. Manually inspect the retained transcript/bullets and prepare expected examples for the renderer and validator.
 - Define each remaining check's owner, bounded input/call allowance, evidence to retain, fallback and deadline. AWS operations remain owner-only; assigning local development work does not require inviting students to the AWS project.
@@ -131,7 +131,7 @@ Next test shared quota admission and concurrent completion with mocked provider 
 
 ## 5. Submission and implementation priorities
 
-For the **23 November 2026** project-plan submission, use the [requirements checklist](../project-plan-checklist.md): select the tested model pair, provide an explained target architecture diagram, distinguish proven components from open risks, update the cost basis, and justify any scope/KPI changes. The detailed plan is limited to ten pages; this evidence summary is supporting material.
+For the **23 November 2026** project-plan submission, use the [requirements checklist](../../docs/planning/project-plan-checklist.md): select the tested model pair, provide an explained target architecture diagram, distinguish proven components from open risks, update the cost basis, and justify any scope/KPI changes. The detailed plan is limited to ten pages; this evidence summary is supporting material.
 
 Complete the offline reconciliation first. Prioritize media fit and output quality in the next authorized feasibility work, alongside small supporting-service probes if possible. Full integration and statistically useful KPI measurements can follow during the eight implementation weeks. Any deferred architecture risk needs a named owner, an early implementation deadline and a fallback; it must not be hidden by marking the entire M1 complete.
 

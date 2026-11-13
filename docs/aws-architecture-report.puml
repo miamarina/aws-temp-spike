@@ -1,0 +1,69 @@
+@startuml aws-architecture-report
+top to bottom direction
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 15
+skinparam ArrowColor #596779
+skinparam ArrowFontSize 12
+skinparam packageStyle rectangle
+skinparam rectangle {
+  RoundCorner 10
+  BorderColor #82612E
+  BackgroundColor #FFF7E8
+}
+skinparam package {
+  BorderColor #8291A2
+  BackgroundColor #FFFFFF
+}
+skinparam database {
+  BorderColor #688166
+  BackgroundColor #F1F7EF
+}
+skinparam queue {
+  BorderColor #967641
+  BackgroundColor #FFF7E7
+}
+hide stereotype
+
+rectangle "Browser\nUpload | Read | Search | Export" as browser #E7EFFA
+rectangle "Original public video" as source #FFFFFF
+rectangle "CloudFront\nPublic HTTPS reader" as cdn #E7EFFA
+
+package "AWS Lambda\nPython · On-demand · eu-north-1" as functions {
+  rectangle "Upload control\nFunction URL" as upload
+  rectangle "Prepare audio\nFFmpeg + task manifest" as prepare
+  rectangle "Transcription Lambdas\nWhole file / parallel chunks" as asr
+  rectangle "Merge + notes + publish\nQueued text tasks as needed" as finish
+  upload -down-> prepare : queued lecture
+  prepare -down-> asr : queued audio tasks
+  asr -down-> finish : completion events
+}
+
+package "AWS persistence · eu-north-1" as persistence {
+  queue "SQS work queues\n+ dead-letter queues" as queues
+  database "Private S3 work bucket\nMedia | Task state\nTranscripts | Measurements" as work
+  database "Private S3 reader bucket\nAssets | Catalog | Results" as results
+  queues -[hidden]down-> work
+  work -[hidden]down-> results
+}
+
+rectangle "Groq · Whisper\nwhisper-large-v3-turbo" as speech #F3EEFA
+rectangle "Groq · LLM\nopenai/gpt-oss-20b" as llm #F3EEFA
+
+browser -down-> upload : request / confirm upload
+browser -right-> work : direct signed upload
+functions -right[dashed]-> queues : queued handoffs
+functions -right[dashed]-> work : read / save
+asr <-left-> speech : transcribe
+finish <-left-> llm : structure
+finish -right-> results : publish
+results -up-> cdn : saved files
+cdn -up-> browser : HTTPS
+browser -left-> source : timestamp links
+
+legend bottom
+  Queued handoffs use SQS; messages contain IDs and S3 references, not media.
+  Only reader files reach CloudFront. Uploaded media stays private.
+endlegend
+@enduml

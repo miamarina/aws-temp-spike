@@ -1,0 +1,383 @@
+{
+  "compiled_on": "2026-11-13",
+  "source_price_date": "2026-11-12",
+  "basis": "AWS-only extract of existing prospective models; no new price query, inference or cloud changes.",
+  "source_files": [
+    "docs/architecture/kpi-testing-cost-model.json",
+    "docs/architecture/whole-project-budget.json",
+    "docs/architecture/kpi-testing-price-evidence.json"
+  ],
+  "deadline": "2027-01-19T23:59:59+01:00",
+  "planning_eur_per_usd": 0.9,
+  "base_test_audio_hours": 46.0,
+  "base_test_notes_hours": 41.5,
+  "campaign_scenarios": [
+    {
+      "name": "lower",
+      "integration_hours": 10.0,
+      "demo_hours": 2.0,
+      "extra_long_hours": 3.0,
+      "attempt_factor": 1.2,
+      "overlap_factor": 1.05,
+      "compute_gb_seconds_per_audio_hour": 500,
+      "project_operations_eur": 10,
+      "notes_only_equivalent_hours": 12.666666666666668
+    },
+    {
+      "name": "upper",
+      "integration_hours": 30.0,
+      "demo_hours": 4.0,
+      "extra_long_hours": 6.0,
+      "attempt_factor": 1.4,
+      "overlap_factor": 1.05,
+      "compute_gb_seconds_per_audio_hour": 3000,
+      "project_operations_eur": 25,
+      "notes_only_equivalent_hours": 31.666666666666668
+    }
+  ],
+  "contingency_fraction": 0.3,
+  "operations_rule": "Whole-project fixed €10–25 replaces the KPI model per-hour operations allowance; contingency applied only once",
+  "notes_tokens_per_audio_hour": {
+    "input": 24000,
+    "billed_output": 6000
+  },
+  "proposed_batches": {
+    "K1": {
+      "audio_hours": 2.5,
+      "notes_hours": 0
+    },
+    "K2": {
+      "audio_hours": 8.333333333333334,
+      "notes_hours": 8.333333333333334
+    },
+    "K3": {
+      "audio_hours": 1.5,
+      "notes_hours": 1.5
+    },
+    "K4": {
+      "audio_hours": 2.0,
+      "notes_hours": 0
+    },
+    "K5": {
+      "audio_hours": 0,
+      "notes_hours": 0
+    },
+    "K6": {
+      "audio_hours": 0,
+      "notes_hours": 0
+    },
+    "R3": {
+      "audio_hours": 1.6666666666666667,
+      "notes_hours": 1.6666666666666667
+    },
+    "R6": {
+      "audio_hours": 30.0,
+      "notes_hours": 30.0
+    }
+  },
+  "core_batch_audio_hours": 14.333333333333334,
+  "core_model_operations_eur_per_audio_hour": 0.02,
+  "core_model_compute_gb_seconds_per_audio_hour": [
+    500,
+    3000
+  ],
+  "options": {
+    "groq_free_turbo_20b": {
+      "source_row": "B",
+      "rates_eur": {
+        "name": "AWS and Groq Free Turbo and GPT OSS 20B",
+        "asr": 0.036000000000000004,
+        "input": 0.0675,
+        "output": 0.27,
+        "compute": 1.500003e-05,
+        "free_ai": true
+      },
+      "core_reference_total_eur": [
+        1.224634946166667,
+        1.9233863436666667
+      ],
+      "whole_project_reference_estimates": [
+        {
+          "scenario": "lower",
+          "submitted_audio_hours": 76.86,
+          "notes_equivalent_hours": 80.46666666666667,
+          "input_tokens": 1931200.0,
+          "billed_output_tokens": 482800.0,
+          "ai_cost_eur": 3.9359736,
+          "infrastructure_operations_eur": 13.74938649877,
+          "total_eur": 17.68536009877
+        },
+        {
+          "scenario": "upper",
+          "submitted_audio_hours": 126.42,
+          "notes_equivalent_hours": 145.76666666666665,
+          "input_tokens": 3498399.9999999995,
+          "billed_output_tokens": 874599.9999999999,
+          "ai_cost_eur": 6.530425200000002,
+          "infrastructure_operations_eur": 39.89558479114,
+          "total_eur": 46.426009991140006
+        }
+      ],
+      "whole_project_reference_range": "€20–50"
+    },
+    "groq_developer_turbo_20b": {
+      "source_row": "C",
+      "rates_eur": {
+        "name": "AWS and Groq Developer Turbo and GPT OSS 20B",
+        "asr": 0.036000000000000004,
+        "input": 0.0675,
+        "output": 0.27,
+        "compute": 1.500003e-05,
+        "free_ai": false
+      },
+      "core_reference_total_eur": [
+        1.224634946166667,
+        1.9233863436666667
+      ],
+      "whole_project_reference_estimates": [
+        {
+          "scenario": "lower",
+          "submitted_audio_hours": 76.86,
+          "notes_equivalent_hours": 80.46666666666667,
+          "input_tokens": 1931200.0,
+          "billed_output_tokens": 482800.0,
+          "ai_cost_eur": 3.9359736,
+          "infrastructure_operations_eur": 13.74938649877,
+          "total_eur": 17.68536009877
+        },
+        {
+          "scenario": "upper",
+          "submitted_audio_hours": 126.42,
+          "notes_equivalent_hours": 145.76666666666665,
+          "input_tokens": 3498399.9999999995,
+          "billed_output_tokens": 874599.9999999999,
+          "ai_cost_eur": 6.530425200000002,
+          "infrastructure_operations_eur": 39.89558479114,
+          "total_eur": 46.426009991140006
+        }
+      ],
+      "whole_project_reference_range": "€20–50"
+    },
+    "groq_v3_120b": {
+      "source_row": "D",
+      "rates_eur": {
+        "name": "AWS and Groq Whisper v3 and GPT OSS 120B",
+        "asr": 0.0999,
+        "input": 0.135,
+        "output": 0.54,
+        "compute": 1.500003e-05,
+        "free_ai": false
+      },
+      "core_reference_total_eur": [
+        2.4567229461666673,
+        3.1554743436666666
+      ],
+      "whole_project_reference_estimates": [
+        {
+          "scenario": "lower",
+          "submitted_audio_hours": 76.86,
+          "notes_equivalent_hours": 80.46666666666667,
+          "input_tokens": 1931200.0,
+          "billed_output_tokens": 482800.0,
+          "ai_cost_eur": 10.6596594,
+          "infrastructure_operations_eur": 13.74938649877,
+          "total_eur": 24.409045898770003
+        },
+        {
+          "scenario": "upper",
+          "submitted_audio_hours": 126.42,
+          "notes_equivalent_hours": 145.76666666666665,
+          "input_tokens": 3498399.9999999995,
+          "billed_output_tokens": 874599.9999999999,
+          "ai_cost_eur": 17.646103800000002,
+          "infrastructure_operations_eur": 39.89558479114,
+          "total_eur": 57.541688591139994
+        }
+      ],
+      "whole_project_reference_range": "€25–60"
+    },
+    "transcribe_nova_lite": {
+      "source_row": "F",
+      "rates_eur": {
+        "name": "AWS Transcribe and Bedrock Nova Lite",
+        "asr": 0.32400000000000007,
+        "input": 0.0585,
+        "output": 0.234,
+        "compute": 1.500003e-05,
+        "free_ai": false
+      },
+      "core_reference_total_eur": [
+        6.585512546166668,
+        7.284263943666669
+      ],
+      "whole_project_reference_estimates": [
+        {
+          "scenario": "lower",
+          "submitted_audio_hours": 76.86,
+          "notes_equivalent_hours": 80.46666666666667,
+          "input_tokens": 1931200.0,
+          "billed_output_tokens": 482800.0,
+          "ai_cost_eur": 32.66716752000001,
+          "infrastructure_operations_eur": 13.74938649877,
+          "total_eur": 46.41655401877001
+        },
+        {
+          "scenario": "upper",
+          "submitted_audio_hours": 126.42,
+          "notes_equivalent_hours": 145.76666666666665,
+          "input_tokens": 3498399.9999999995,
+          "billed_output_tokens": 874599.9999999999,
+          "ai_cost_eur": 53.78021064000002,
+          "infrastructure_operations_eur": 39.89558479114,
+          "total_eur": 93.67579543114002
+        }
+      ],
+      "whole_project_reference_range": "€50–100"
+    }
+  },
+  "groq_free_core_hosting_eur": [
+    0.5124169461666668,
+    1.2111683436666667
+  ],
+  "groq_free_whole_project_cash_range": "€15–40",
+  "groq_rates_usd": {
+    "sources": [
+      "https://console.groq.com/docs/models",
+      "https://console.groq.com/docs/speech-to-text"
+    ],
+    "rates_usd": {
+      "turbo_per_audio_hour": 0.04,
+      "whisper_v3_per_audio_hour": 0.111,
+      "gptoss20b_input_per_million": 0.075,
+      "gptoss20b_output_per_million": 0.3,
+      "gptoss120b_input_per_million": 0.15,
+      "gptoss120b_output_per_million": 0.6
+    }
+  },
+  "aws_price_evidence": [
+    {
+      "name": "AmazonBedrock",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonBedrock/current/eu-north-1/index.json",
+      "publication_date": "2026-11-11T01:30:37Z",
+      "records": [
+        {
+          "sku": "E4Z3PKDHV45PZQMB",
+          "attributes": {
+            "servicecode": "AmazonBedrock",
+            "location": "EU (Stockholm)",
+            "locationType": "AWS Region",
+            "usagetype": "EUN1-NovaLite-output-tokens",
+            "operation": "",
+            "feature": "On-demand Inference",
+            "inferenceType": "Output tokens",
+            "model": "Nova Lite",
+            "regionCode": "eu-north-1",
+            "servicename": "Amazon Bedrock"
+          },
+          "price_dimension": {
+            "rateCode": "E4Z3PKDHV45PZQMB.JRTCKXETXF.6YS6EN2CT7",
+            "description": "$0.00026 per 1K tokens for EUN1-NovaLite-output-tokens in EU (Stockholm)",
+            "beginRange": "0",
+            "endRange": "Inf",
+            "unit": "1K tokens",
+            "pricePerUnit": {
+              "USD": "0.0002600000"
+            },
+            "appliesTo": []
+          }
+        },
+        {
+          "sku": "5B2T2U8FNRYYV6G4",
+          "attributes": {
+            "servicecode": "AmazonBedrock",
+            "location": "EU (Stockholm)",
+            "locationType": "AWS Region",
+            "usagetype": "EUN1-NovaLite-input-tokens",
+            "operation": "",
+            "feature": "On-demand Inference",
+            "inferenceType": "Input tokens",
+            "model": "Nova Lite",
+            "regionCode": "eu-north-1",
+            "servicename": "Amazon Bedrock"
+          },
+          "price_dimension": {
+            "rateCode": "5B2T2U8FNRYYV6G4.JRTCKXETXF.6YS6EN2CT7",
+            "description": "$0.000065 per 1K tokens for EUN1-NovaLite-input-tokens in EU (Stockholm)",
+            "beginRange": "0",
+            "endRange": "Inf",
+            "unit": "1K tokens",
+            "pricePerUnit": {
+              "USD": "0.0000650000"
+            },
+            "appliesTo": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "transcribe",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/transcribe/current/eu-north-1/index.json",
+      "publication_date": "2026-09-11T12:46:46Z",
+      "records": [
+        {
+          "sku": "77GAAWDDMSF9R2UU",
+          "attributes": {
+            "servicecode": "transcribe",
+            "location": "EU (Stockholm)",
+            "locationType": "AWS Region",
+            "usagetype": "EUN1-TranscribeAudio",
+            "operation": "TranscribeAudio",
+            "regionCode": "eu-north-1",
+            "servicename": "Amazon Transcribe",
+            "supportedModes": "Audio to Text"
+          },
+          "price_dimension": {
+            "rateCode": "77GAAWDDMSF9R2UU.JRTCKXETXF.6YS6EN2CT7",
+            "description": "$0.0001 per second for TranscribeAudio in EU (Stockholm)",
+            "beginRange": "0",
+            "endRange": "Inf",
+            "unit": "second",
+            "pricePerUnit": {
+              "USD": "0.0001000000"
+            },
+            "appliesTo": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "AWSLambda",
+      "source_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSLambda/current/eu-north-1/index.json",
+      "publication_date": "2026-11-11T22:30:04Z",
+      "records": [
+        {
+          "sku": "7N49FRQMXS49C2QS",
+          "attributes": {
+            "servicecode": "AWSLambda",
+            "location": "EU (Stockholm)",
+            "locationType": "AWS Region",
+            "group": "AWS-Lambda-Duration",
+            "groupDescription": "Invocation duration weighted by memory assigned to function, measured in GB-s",
+            "usagetype": "EUN1-Lambda-GB-Second",
+            "operation": "",
+            "regionCode": "eu-north-1",
+            "servicename": "AWS Lambda"
+          },
+          "price_dimension": {
+            "rateCode": "7N49FRQMXS49C2QS.JRTCKXETXF.CUKFZ388N3",
+            "description": "USD 0.0000166667 per Second for Lambda-GB-Second in EU (Stockholm)-Tier-1",
+            "beginRange": "0",
+            "endRange": "6000000000",
+            "unit": "Lambda-GB-Second",
+            "pricePerUnit": {
+              "USD": "0.0000166667"
+            },
+            "appliesTo": []
+          }
+        }
+      ]
+    }
+  ],
+  "inference_calls": 0,
+  "cloud_changes": false
+}

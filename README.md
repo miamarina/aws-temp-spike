@@ -1,5 +1,7 @@
 # From a video to study notes: what we proved
 
+**Architecture:** [start with the AWS docs](docs/README.md) for the [implemented spike](docs/spike-architecture.md), the [planned full project](docs/aws-architecture-report.md), and [design reasons/open issues](docs/aws-considerations.md).
+
 **Session:** 7–8 November 2026, Europe/Vienna. We crossed midnight during the cloud tests.
 
 **Result:** a short video can travel through S3 → Lambda → Groq → saved study notes. FFmpeg also works inside Lambda. All planned inference tests passed within our limits.
@@ -78,4 +80,4 @@ Each successful step gave the next step a known input. That is the point of this
 
 **Reading this report makes no API calls.** Replaying it is another experiment and needs a fresh temporary key and an agreed allowance. The current campaign still has only **435 audio seconds and 1 LLM call** left.
 
-For exact identifiers, hashes, timestamps, and the formal checklist, use the [evidence record](../m1-fail-fast-spike.md).
+For exact identifiers, hashes, timestamps, and the formal checklist, use the [evidence record](../../docs/history/m1-fail-fast-spike.md).
