@@ -1,0 +1,9 @@
+.build/
+.local/
+config.json
+__pycache__/
+.venv/
+.env
+.env.*
+*.whl
+*.zip

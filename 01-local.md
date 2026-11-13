@@ -58,7 +58,7 @@ In the signed-in [Groq console](https://console.groq.com/), we checked **Free â€
 
 These are the observed limits for our organization, not a promise for another project. Check your own console. [Groq rate-limit documentation](https://console.groq.com/docs/rate-limits)
 
-We created a temporary API key on [Groq API Keys](https://console.groq.com/keys), then used the retained [Groq request script](../groq_spike.py). It needs Python **3.12+** and only the standard library:
+We created a temporary API key on [Groq API Keys](https://console.groq.com/keys), then used the retained [Groq request script](groq_spike.py). It needs Python **3.12+** and only the standard library:
 
 ~~~powershell
 python assignment-2/groq_spike.py

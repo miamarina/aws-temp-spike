@@ -1,0 +1,29 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ReadFixtureAndReuseBullets",
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": [
+        "arn:aws:s3:::YOUR_BUCKET/input/vectors-study-55s.mp4",
+        "arn:aws:s3:::YOUR_BUCKET/output/mp4-01/bullets.md"
+      ]
+    },
+    {
+      "Sid": "WriteSpikeOutputAndAttemptGuards",
+      "Effect": "Allow",
+      "Action": "s3:PutObject",
+      "Resource": [
+        "arn:aws:s3:::YOUR_BUCKET/output/*",
+        "arn:aws:s3:::YOUR_BUCKET/attempts/*"
+      ]
+    },
+    {
+      "Sid": "ScopedLogs",
+      "Effect": "Allow",
+      "Action": ["logs:CreateLogStream", "logs:PutLogEvents"],
+      "Resource": "arn:aws:logs:eu-north-1:YOUR_PROJECT_ID:log-group:/aws/lambda/YOUR_FUNCTION_NAME:*"
+    }
+  ]
+}

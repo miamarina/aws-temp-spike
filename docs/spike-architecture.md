@@ -26,7 +26,7 @@ flowchart TB
 
 The arrows show calls made by the handler. S3 uploads do **not** trigger processing. There is no Function URL, API Gateway, SQS queue, Step Functions workflow, database, static reader or CloudFront distribution in this implementation.
 
-The separate [local script](../../../projects/aws-groq-spike/groq_spike.py) exercises the Groq API from the operator's machine and records its attempts in the workspace campaign ledger. It is not a deployment tool or browser backend. The [cloud appendix](../04-code.md#lambda-handler) contains the tested Lambda handler and packaging/policy recipes.
+The separate [local script](../groq_spike.py) exercises the Groq API from the operator's machine and records its attempts in the workspace campaign ledger. The [Lambda handler](../lambda_function.py), [layer/function packager](../package_layer.py), [upload helper](../../../projects/aws-groq-spike/upload.py) and [policy templates](../policies/README.md) are available as source beside these docs. The [cloud appendix](../04-code.md#lambda-handler) explains the tested handler and packaging/policy recipes.
 
 ## Actual configuration
 

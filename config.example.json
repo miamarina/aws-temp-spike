@@ -1,0 +1,9 @@
+{
+  "profile": "studynotes",
+  "region": "eu-north-1",
+  "project_id": "REPLACE_WITH_12_DIGIT_PROJECT_ID",
+  "bucket_name": "studynotes-spike-replace-with-unique-name",
+  "function_name": "studynotes-spike-yourname",
+  "role_name": "studynotes-spike-yourname-worker",
+  "layer_name": "studynotes-spike-yourname-ffmpeg"
+}

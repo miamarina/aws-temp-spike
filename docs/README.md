@@ -31,8 +31,9 @@ The planned architecture has a [PNG diagram](aws-architecture-report.png), [SVG 
 
 ## Code and supporting material
 
-- [Retained local request script](../../../projects/aws-groq-spike/groq_spike.py) and [code-folder entry point](../../../projects/aws-groq-spike/README.md).
-- [Tested cloud handler, scoped policies and layer packaging](../04-code.md).
+- [Lambda handler](../lambda_function.py), [local request script](../groq_spike.py) and [code-folder entry point](../README.md).
+- [Function/FFmpeg layer packager](../package_layer.py), [package upload helper](../../../projects/aws-groq-spike/upload.py), [policy templates](../policies/README.md), and invocation events for [MP4](../events/mp4.json) / [WAV](../events/wav.json).
+- [Code and policy explanation](../04-code.md).
 - [Saved input/output index and checksum manifest](../data/README.md).
 - [Cloud configuration and output details](../02-cloud.md) and [FFmpeg configuration](../03-ffmpeg-and-cleanup.md).
 - [Resource-removal receipt](../aws-cleanup.json).

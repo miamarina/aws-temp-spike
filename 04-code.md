@@ -1,5 +1,7 @@
 # Code appendix
 
+The source files are available in the [AWS spike project](README.md): [Lambda handler](lambda_function.py), [function/layer packager](package_layer.py), [upload helper](../../projects/aws-groq-spike/upload.py), and [policy templates](policies/README.md). The original code excerpts below remain available for explanation.
+
 [Overview](README.md) · [Local walkthrough](01-local.md) · [Cloud walkthrough](02-cloud.md) · [FFmpeg and cleanup](03-ffmpeg-and-cleanup.md)
 
 **Use this as a reference.** You do not need to read every line to understand the report.
